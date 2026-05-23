@@ -43,7 +43,7 @@ public class InvoiceService {
             Style boldStyle = new Style().setBold(true);
 
             // 4. Header
-            escpos.writeLF(titleStyle, "Festa da crianca");
+            escpos.writeLF(titleStyle, "Festa do trigal");
             escpos.writeLF(subtitleStyle, "Ass pais EB de Trigal de Santa Maria");
             escpos.writeLF(subtitleStyle, LocalDateTime.now().format(formatter));
             escpos.writeLF("-".repeat(WIDTH));
@@ -52,8 +52,8 @@ public class InvoiceService {
             // %-20s = Left-aligned string with 20 spaces
             // %4s = Right-aligned string with 4 spaces
             // %7s = Right-aligned string with 7 spaces
-            final String headerFormat = "%-21s %4s %9s %9s";
-            final String lineFormat   = "%-21s %4d %9.2f %9.2f";
+            final String headerFormat = "%-27s %4s %6s %6s";
+            final String lineFormat   = "%-27s %4d %6.2f %6.2f";
 
             // 5. Column Headers
             escpos.writeLF(boldStyle, String.format(headerFormat, "Item", "Qtd", "P.Unit", "Total"));
